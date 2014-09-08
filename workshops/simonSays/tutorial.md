@@ -25,7 +25,7 @@ A round in the game consists of the device lighting up one or more LEDs, and pla
 - Laptops with Arduino IDE installed
 - USB cables to load sketches onto Arduino
 
-## Flow 1
+## Flow 1 - Getting Started
 
 In this simple flow we'll just check that Arduino and the IDE in your machine are fully functional. We are goin to upload a simple sketch (that's how arduino programs are called) that will blink a led.
 Most Arduino boards already have an internal LED attached to pin 13 on the board itself, so there's no need yet to use any additional hardware.
@@ -35,7 +35,7 @@ Most Arduino boards already have an internal LED attached to pin 13 on the board
 
 Congratulations! We are now ready to so more interesting things!
 
-## Flow 2
+## Flow 2 - Work with digital pins
 
 In this simple flow we'll start to plug the components on the breadboard. Please insert the components as shown in the following picture. You can notice that the connected dots in the breadboards are green. 
 
@@ -43,16 +43,26 @@ In this simple flow we'll start to plug the components on the breadboard. Please
 
 Open the sketch flow2 (sketches/flow2.ino) and upload it to the board. It's very simple: when you push the button, the led is lighted up. The purpose of this sketch is to let you familiarize in creating small circuits on the breadboard and in understanding the basic API of Arduino.
 
-## Flow 3
+## Flow 3 - More digital pins
 
-In this last flow, we'll complete the game and we'll finally have some fun playing with it.
-To start, repeat what we do in flow2 for three times, so to have not one, but three combinations of led + button. Then, we need to add the Piezo speaker (sometimes also called Buzzer) to provide some fancy sounds.
-
-The final result should look similar to the picture (you could connect the lower leg of the LEDs directly to the ground horizontal line of the breadboard. In this way you don't have to connect the three little black wires):
+Let's just repeat two other times what we did in flow2 two, so to have not one, but three combinations of led + button.
 
 ![](imgs/flow3.png)
 
-Open the sketch flow3 (sketches/flow3.ino) and upload it to the board.
+Stable and secure plugging of the buttons in the breadboard can sometimes be tricky. Push them on the diagonal for max stability.  
+Open the sketch flow2 (sketches/flow3.ino) and upload it to the board.
+
+
+## Flow 4 - Full game
+
+In this last flow, we'll complete the game and we'll finally have some fun playing with it.
+We need to add the Piezo speaker (sometimes also called Buzzer) to provide some fancy sounds.
+
+The final result should look similar to the picture (you could connect the lower leg of the LEDs directly to the ground horizontal line of the breadboard. In this way you don't have to connect the three little black wires):
+
+![](imgs/flow4.png)
+
+Open the sketch flow4 (sketches/flow4.ino) and upload it to the board.
 
 "The code uses an extra file, pitches.h. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the tone() command was based. You may find it useful for whenever you want to make musical notes." 
 
