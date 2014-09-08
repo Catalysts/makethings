@@ -170,9 +170,9 @@ void loop(void)
         // Spew it
         printf("Got payload %lu...",got_time);
 
-    // Delay just a little bit to let the other unit
-    // make the transition to receiver
-    delay(20);
+        // Delay just a little bit to let the other unit
+        // make the transition to receiver
+        delay(20);
       }
 
       // First, stop listening so we can talk
