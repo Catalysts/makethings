@@ -90,12 +90,11 @@ void loop(void)
         // Fetch the payload, and see if this was the last one.
         done = radio.read( &got_time, sizeof(unsigned long) );     
         
-    // Delay just a little bit to let the other unit
-    // make the transition to receiver
-    TXLED1;
-    delay(20);
-    TXLED0;
-        
+        // Delay just a little bit to let the other unit
+        // make the transition to receiver
+        TXLED1;
+        delay(20);
+        TXLED0;
       }
 
       // First, stop listening so we can talk
