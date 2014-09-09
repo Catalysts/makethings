@@ -1,12 +1,11 @@
 # Play Simon with Arduino
 
-In this workshop we are going to build the Simon game (<http://en.wikipedia.org/wiki/Simon_(game)>) with Arduino. To make the assembly routine faster, I reduced the size of the available colors to three, but the code will permit very easily to add extra colors.
+In this workshop we are going to build the [Simon](http://en.wikipedia.org/wiki/Simon_(game)) game with [Arduino](https://ardunio.cc). To make the assembly routine faster, I reduced the size of the available colors to three, but the code will permit very easily to add extra colors.
 A round in the game consists of the device lighting up one or more LEDs, and playing a corresponding note, in a random order, after which the player must reproduce that order by pressing the buttons. 
 
 ![](imgs/simon_s.jpg)
 
 >This is what you will build in this workshop.
-
 
 ## Requirements
 
@@ -27,13 +26,13 @@ A round in the game consists of the device lighting up one or more LEDs, and pla
 
 ## Flow 1 - Getting Started
 
-In this simple flow we'll just check that Arduino and the IDE in your machine are fully functional. We are goin to upload a simple sketch (that's how arduino programs are called) that will blink a led.
-Most Arduino boards already have an internal LED attached to pin 13 on the board itself, so there's no need yet to use any additional hardware.
+In this simple flow we'll just check that Arduino and the IDE in your machine are fully functional. We are going to upload a simple sketch (that's how Arduino programs are called) that will blink a LED.
+Most Arduino boards already have an internal LED attached to pin 13 on the board itself, so there's no need to use any additional hardware yet.
 
 1. Download the IDE at <http://arduino.cc/en/Main/Software>
 2. Follow the simple instructions, based on your platform at <http://arduino.cc/en/Guide/Windows>, <http://arduino.cc/en/Guide/MacOSX>, <http://www.arduino.cc/playground/Learning/Linux>
 
-Congratulations! We are now ready to so more interesting things!
+Congratulations! We are now ready to do so more interesting things!
 
 ## Flow 2 - Work with digital pins
 
@@ -41,39 +40,32 @@ In this simple flow we'll start to plug the components on the breadboard. Please
 
 ![](imgs/flow2.png)
 
-Open the sketch flow2 (sketches/flow2.ino) and upload it to the board. It's very simple: when you push the button, the led is lighted up. The purpose of this sketch is to let you familiarize in creating small circuits on the breadboard and in understanding the basic API of Arduino.
+Open the sketch flow2 (sketches/flow2.ino) and upload it to the board. It's very simple: when you push the button, the LED is lighted up. The purpose of this sketch is to let you familiarize in creating small circuits on the breadboard and in understanding the basic API of Arduino.
 
 ## Flow 3 - More digital pins
 
-Let's just repeat two other times what we did in flow2 two, so to have not one, but three combinations of led + button.
+Let's just repeat two more times what we did in flow2 two, so to have not one, but three combinations of LED + button.
 
 ![](imgs/flow3.png)
 
-Stable and secure plugging of the buttons in the breadboard can sometimes be tricky. Push them on the diagonal for max stability.  
+Stable and secure plugging of the buttons in the breadboard can sometimes be tricky. Push them on the diagonal for maximum stability.
 Open the sketch flow2 (sketches/flow3.ino) and upload it to the board.
-
 
 ## Flow 4 - Full game
 
 In this last flow, we'll complete the game and we'll finally have some fun playing with it.
 We need to add the Piezo speaker (sometimes also called Buzzer) to provide some fancy sounds.
 
-The final result should look similar to the picture (you could connect the lower leg of the LEDs directly to the ground horizontal line of the breadboard. In this way you don't have to connect the three little black wires):
-
 ![](imgs/flow4.png)
+
+> Your setup should look similar. You could also connect the lower leg of the LEDs directly to the ground horizontal line of the breadboard. This way you don't have to connect the three little black wires.
 
 Open the sketch flow4 (sketches/flow4.ino) and upload it to the board.
 
-"The code uses an extra file, pitches.h. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the tone() command was based. You may find it useful for whenever you want to make musical notes." 
+The code uses an extra file, `pitches.h` on which `tone()` is based. This file contains all the pitch values for typical notes. For example, `NOTE_C4` is middle C. `NOTE_FS4` is F sharp, and so forth. This note table was originally taken from [an Arduino example](http://arduino.cc/en/Reference/Tone) and written by [@bhagman](https://github.com/bhagman). You may find it useful for whenever you want to make musical notes.
 
 Have fun!
 
+## Additional resources
 
-
-
-
-## Aditional resources
-
-1. Arduino <http://arduino.cc>
-2. Fritzing <http://fritzing.org>
-3. Arduino Tone functions <http://arduino.cc/en/Reference/Tone>
+1. Fritzing <http://fritzing.org>
