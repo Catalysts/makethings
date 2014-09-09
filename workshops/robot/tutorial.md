@@ -87,10 +87,14 @@ Connect wires as shown:
 You will use sketch from [Appendix 2](#appendix-2) to calibrate our IR distance sensor.
 
 
-If you open Serial Monitor (Tools > Serial Monitor) after compiling and uploading sketch, you will see current distance to the object in front of the distance sensor.
+The sketch converts the voltage values read from the first analog pin (A0) to distances in centimeters. To achieve that, it uses a prefilled table (2-dimension array) that maps together the two measurements. It's important to note that Arduino uses a 10-bit analog to digital converter. This means that the value read from the analog pins (from 0 to 5 volts) will be translated into integer values between 0 and 1023.
+If you open Serial Monitor (Tools > Serial Monitor) after compiling and uploading sketch, you will see current analog value and corresponding distance to the object in front of the sensor.
 
 
-Check if correct distance is shown with ruler. If it is not correct - just change it[b].
+You can check with a ruler if the distance printed in the Srial Monitor is correct. If it's not enough precise, you have to tune the values in the table until you reach the level of precision you need.  Serial.print("Analog value: ");
+  Serial.print(analogRead(A0));
+  Serial.print(". Distance (cm): ");
+  Serial.println(curr_dist);
 
 
 Congratulations! You just learned how to measure a distance with IR sensor.
@@ -301,10 +305,12 @@ int dist_table[][2] = { // calibration table cm to analog value
   {30, 180}, {35, 170}, {40, 140}, {50, 120}, {55, 115},
   {60, 106}, {65, 102}, {70, 98}, {75, 94}, {80, 90}
 };
+
 int filter(int prev, int curr) { // filter function
   const float filterVal = 0.1;
   return (int)((float)curr * filterVal + (float)prev * (1 - filterVal));
 }
+
 int distance(int pin) { // get current distance from sensor
   const int tries = 10, ms = 1;
   int val = analogRead(pin);
@@ -324,15 +330,19 @@ int distance(int pin) { // get current distance from sensor
   }
   return dist_table[len - 1][0];
 }
+
 void setup() {
   pinMode(A0, INPUT);
   Serial.begin(9600);
 }
+
 void loop() {
   delay(500);
   int curr_dist = distance(A0);
-  Serial.print(curr_dist);
-  Serial.println("cm");
+  Serial.print("Analog value: ");
+  Serial.print(analogRead(A0));
+  Serial.print(". Distance (cm): ");
+  Serial.println(curr_dist);
 }
 ```
 
@@ -512,6 +522,5 @@ void loop() {
 ```
 
 [a]In the generated PDF, this routes via google.com, looks suspicious. I'd rather prefer being linked directly to the page.
-[b]Not really straightforward how to calibrate. Need a better explanation
 [c]The sketch isnt really for calibration. It has additional logic to iterate over speeds/directions. Maybe we should comment those lines, and let the users firstly calibrate, then test the speed/direction iteration.
 [d]Maybe a picture here that helps get the wiring right in the final assembled bot?
