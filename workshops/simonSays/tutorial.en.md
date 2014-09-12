@@ -3,7 +3,7 @@
 In this workshop we are going to build the [Simon](http://en.wikipedia.org/wiki/Simon_(game)) game with [Arduino](https://ardunio.cc). To make the assembly routine faster, I reduced the size of the available colors to three, but the code will permit very easily to add extra colors.
 A round in the game consists of the device lighting up one or more LEDs, and playing a corresponding note, in a random order, after which the player must reproduce that order by pressing the buttons. 
 
-![](imgs/simon_s.jpg)
+![](images/simon_s.jpg)
 
 >This is what you will build in this workshop.
 
@@ -38,7 +38,7 @@ Congratulations! We are now ready to do so more interesting things!
 
 In this simple flow we'll start to plug the components on the breadboard. Please insert the components as shown in the following picture. You can notice that the connected dots in the breadboards are green. 
 
-![](imgs/flow2.png)
+![](images/flow2.png)
 
 Open the sketch flow2 (sketches/flow2.ino) and upload it to the board. It's very simple: when you push the button, the LED is lighted up. The purpose of this sketch is to let you familiarize in creating small circuits on the breadboard and in understanding the basic API of Arduino.
 
@@ -46,7 +46,7 @@ Open the sketch flow2 (sketches/flow2.ino) and upload it to the board. It's very
 
 Let's just repeat two more times what we did in flow2 two, so to have not one, but three combinations of LED + button.
 
-![](imgs/flow3.png)
+![](images/flow3.png)
 
 Stable and secure plugging of the buttons in the breadboard can sometimes be tricky. Push them on the diagonal for maximum stability.
 Open the sketch flow3 (sketches/flow3.ino) and upload it to the board.
@@ -56,7 +56,7 @@ Open the sketch flow3 (sketches/flow3.ino) and upload it to the board.
 In this last flow, we'll complete the game and we'll finally have some fun playing with it.
 We need to add the Piezo speaker (sometimes also called Buzzer) to provide some fancy sounds.
 
-![](imgs/flow4.png)
+![](images/flow4.png)
 
 > Your setup should look similar. You could also connect the lower leg of the LEDs directly to the ground horizontal line of the breadboard. This way you don't have to connect the three little black wires.
 

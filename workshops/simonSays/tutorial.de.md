@@ -3,7 +3,7 @@
 In diesem Workshop werden wir das Spiel [Simon Says](https://de.wikipedia.org/wiki/Simon_says_(Spiel)) mit Arduino nachbauen. Um das Zusammenbauen zu beschleunigen, wurde die Anzahl der Farben auf drei begrenzt, der Code erlaubt es aber sehr leicht neue Farben hinzuzufügen.
 In einer Runde des Spiels blinken eine oder mehrere LEDs in zufälliger Reihenfolge und der jeweils zugehörige Ton ist zu hören. Der Spieler/die Spielerin soll danach die Knöpfe in der gleichen Reihenfolge drücken um die Sequenz zu reproduzieren.
 
-![](imgs/simon_s.jpg)
+![](images/simon_s.jpg)
 
 > Das wirst du in diesem Workshop bauen.
 
@@ -41,7 +41,7 @@ Toll! Jetzt können wir uns spannenderen Dingen widmen!
 
 In diesem Flow werden wir beginnen die Komponeten mit Hilfe der Steckplatine zu verbinden. Bitte verbinde alle Teile wie in der folgenden Abbildung ersichtlich. Alle verbundenen Steckplätze wurden grün hervorgehoben.
 
-![](imgs/flow2.png)
+![](images/flow2.png)
 
 Öffne den Sketch `sketches/flow2.ino` und lade ihn auf das Arduino-Board hoch. Das Ergebnis ist recht simpel: Wenn du den Knopf drückst, leuchtet die LED. Du hast nun gelernt wie man kleine Schaltkreise baut und dich mit der IDE vertraut gemacht.
 
@@ -49,7 +49,7 @@ In diesem Flow werden wir beginnen die Komponeten mit Hilfe der Steckplatine zu 
 
 Wir wiederholen und zwei weitere Male, was wir schon in Flow 2 getan haben. So ergeben sich drei LEDs und dazugehörige Buttons.
 
-![](imgs/flow3.png)
+![](images/flow3.png)
 
 Knöpfe stabil und sicher mit der Steckplatine zu verbinden kann manchmal etwas knifflig sein. Am besten du drückst sie mit Gefühl an zwei diagonal Liegenden Eckpunkten in die Platine.
 Öffne `sketches/flow3.ino` und lade ihn auf das Arduino-Board hoch.
@@ -61,7 +61,7 @@ Wir benötigen jetzt auch den Piezo-Lautsprecher, mit dem wir verschiedenste Ger
 
 Das Endergebnis sollte ähnlich aussehen wie auf der Abbildung, du könntest natürlich auch die negativen Pins der LEDs direkt mit der horizontalen Erdung verbinden um dir die drei zusätzlichen Kabelstrecken zu sparen:
 
-![](imgs/flow4.png)
+![](images/flow4.png)
 
 Öffne `sketches/flow4.ino` und lade ihn auf das Arduino-Board hoch.
 

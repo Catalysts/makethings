@@ -47,7 +47,7 @@ First of all you need to install Arduino IDE. [Getting Started Guide](http://ard
 Let’s start.
 * Open Arduino IDE. By default it will open empty sketch.
 
-  ![Arduino IDE](./pics/arduino_ide.png "Arduino IDE")
+  ![Arduino IDE](images/arduino_ide.png "Arduino IDE")
 
 * Open example sketch from File > Examples > 01.Basics > Blink (or see [Appendix 1](#appendix-1-led-blinking-example)).
 
@@ -68,15 +68,15 @@ Congratulations! You have just uploaded your program to the microcontroller.
 
 There is a wide range of different sensors which can be used with Arduino.
 
-![IR sensor](./pics/ir_sensor_preview.png)
+![IR sensor](images/ir_sensor_preview.png)
 
 You will use Sharp infrared distance sensor (GP2Y0A21YK0F) which can measure distance to the object. Its range is restricted: 10 to 80 centimeters.
 
-![Analog Output Voltage vs Distance to Reflective Object](./pics/ir_sensor_diagram.png)
+![Analog Output Voltage vs Distance to Reflective Object](images/ir_sensor_diagram.png)
 
 It’s easy to connect this sensor to Arduino. Take a look on following picture.
 
-![](./pics/ir.png)
+![](images/ir.png)
 
 Connect wires as shown:
 * + (red wire) to +5V pin
@@ -104,7 +104,7 @@ Congratulations! You just learned how to measure a distance with IR sensor.
 
 There are wide range mechanisms which can help our robot to move. The most common used are DC motors, stepper motors and servos. You will use continuous rotation servos for that.
 
-![Servo](./pics/servo.png )
+![Servo](images/servo.png )
 
 Basically servo drive monitors the feedback signal from the servomechanism and continually adjusts for deviation from expected behavior. In our case that means it maintains constant rotation speed.
 
@@ -115,7 +115,7 @@ Servo motors typically have three wires: power (red), ground (black or brown) an
 
 In general servos are controlled by PWM (pulse width modulation) signal. You can control rotation speed and direction by changing pulse width.
 
-![](./pics/one_servo.png)
+![](images/one_servo.png)
 
 At first you will calibrate servos. It can be done on hardware or software level. In first case you can adjust rotation speed by potentiometer (which can be accessible externally or internally). In second case you can adjust pulse width by changing parameter of writeMilliseconds function. Later you will control two servos, therefore it is easier to calibrate it on hardware level.
 
@@ -124,7 +124,7 @@ Sketch from [Appendix 3](#appendix-3-control-servo) will help us to calibrate se
 Then you will connect two servos at once to control them simultaneously. Take a look on following picture.
 
 
-![](./pics/two_servos.png)
+![](images/two_servos.png)
 
 You need to slightly change sketch to control both servos simultaneously. Take a look on it in [Appendix 4](#appendix-4-two-servos).
 
@@ -133,13 +133,13 @@ You need to slightly change sketch to control both servos simultaneously. Take a
 
 Until now you used power from USB. Now you will start to use AA batteries in a block of 4 to power robot.
 
-![](./pics/battery_holder.png)
+![](images/battery_holder.png)
 
 Plug the positive, red cable into VIN, and the negative, black cable into one of the GND pins of Arduino board. Arduino board has built-in voltage regulator and may consume from 5 to 20 volts on VIN pin (recommended from 7 to 12).
 
 Connect altogether as shown on the picture below
 
-![](./pics/bot.png)
+![](images/bot.png)
 
 Make sure you connect everything properly and then turn the switch on the battery case to ON.
 
@@ -154,7 +154,7 @@ Several parts have been prepared to build robot “body”:
 3. wheels (printed on 3D printer)
 4. tires (rubber rings)
 
-![](./pics/bot_box.png)
+![](images/bot_box.png)
 
 At first fix servos to side panels with screws (12mm M2). Pay attention that servo shaft should align closer to backside of the robot body. Then fix IR sensor on front panel also with screws (6mm M3). Then pull all the wires through holes in front and back panels so that all of them comes out of back panel. Then take mini breadboard and stick it with 2-sided adhesive tape on back panel.
 
@@ -212,7 +212,7 @@ Task is change robot behavior so that it hold same distance to obstacle when obs
 
 Your task is to make robot moving forth and back. Main goal is that robot has to move exact distance and return back on start position.
 
-![](./pics/shuttle_run.png)
+![](images/shuttle_run.png)
 
 The idea is to implement precise control - moving straight fro N centimeters and rotate exact 180 degrees.
 
@@ -220,13 +220,13 @@ The idea is to implement precise control - moving straight fro N centimeters and
 
 Now imagine our robot overcomes a bridge. If you implemented calibration well enough it is not a problem to move straight.
 
-![](./pics/straight_way.png)
+![](images/straight_way.png)
 
 # Snake moving
 
 Imagine you are in tunnel. To find an exit robot will move repeating bends of route. You canl implement kind of PID (proportional-integral-derivative) controller.
 
-![](./pics/snake_moving.png)
+![](images/snake_moving.png)
 
 
 # Advanced flow
@@ -247,7 +247,7 @@ Line following is another kind of competitions. Robots are trying to follow the 
 
 
 These rangers all use triangulation and a small linear CCD array to compute the distance and/or presence of objects in the field of view. In order to triangulare, a pulse of IR light is emitted by the emitter. The light travels out into the field of view and either hits an object or just keeps on going. In the case of no object, the light is never reflected, and the reading shows no object. If the light reflects off an object, it returns to the detector and creates a triangle between the point of reflection, the emitter and the detector.
-![](./pics/sharp_sensor.png)
+![](images/sharp_sensor.png)
 
 The incident angle of the reflected light varies based on the distance to the object. The receiver portion of the IR rangers is a precision lens that transmits reflected light onto various portions of the enclosed linear CCD array based on the incident angle of the reflected light. The CCD array can then determine the incident angle, and thus calculate the distance to the object. This method of ranging is very immune to interference from ambient light and offers indifference to the color of the object being detected.
 
@@ -259,7 +259,7 @@ In comparison with DC motor servos can be controlled more easily.
 ## What is role of PWM in controlling servos?
 Take a look on following picture. You may see a signal of rectangular form which has 2 characteristics: pulse width and period.
 
-![](./pics/pwm_cycles.png)
+![](images/pwm_cycles.png)
 
 Typically servos are controlled by PWM signal with fixed period. By controlling pulse width we can control servo.
 
