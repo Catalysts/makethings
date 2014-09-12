@@ -49,7 +49,7 @@ Let's just repeat two more times what we did in flow2 two, so to have not one, b
 ![](imgs/flow3.png)
 
 Stable and secure plugging of the buttons in the breadboard can sometimes be tricky. Push them on the diagonal for maximum stability.
-Open the sketch flow2 (sketches/flow3.ino) and upload it to the board.
+Open the sketch flow3 (sketches/flow3.ino) and upload it to the board.
 
 ## Flow 4 - Full game
 
