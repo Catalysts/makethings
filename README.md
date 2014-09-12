@@ -1,6 +1,6 @@
 <div>
   <a href="http://makethings.io/vienna">
-    <img src="https://makethings.s3.amazonaws.com/event/img/logo.png?Signature=PgmxFy2Mjx1nKbXY0B7N3RUkEEk%3D&Expires=1410537368&AWSAccessKeyId=AKIAIZSUJW7YJF7VQDWQ" align="left" />
+    <img src="https://makethings.s3.amazonaws.com/event/img/logo.png" align="left" />
   </a>
   <h3 align="right"><a href="http://makethings.io/vienna">Make Things in Vienna</a></h3>
   <p align="right"><strong>20 September 2014</strong><br />
