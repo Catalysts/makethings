@@ -1,4 +1,4 @@
-![](../../images/3D_modeling_printing.png.png)
+![](../../images/3D_modeling_printing.png)
 
 # 3D Modelling'n'Printing
 
@@ -18,7 +18,7 @@ This workshop contains from two big parts:
 
 > 3D printing or additive manufacturing is any of various processes for making
 > a three-dimensional object of almost any shape from a 3D model or other
-> electronic data source primarily through additive processes in which 
+> electronic data source primarily through additive processes in which
 > successive layers of material are laid down under computer control.[2] A 3D
 > printer is a type of industrial robot. (c) Wikipedia
 
@@ -59,5 +59,3 @@ This workshop contains from two big parts:
   ![](https://thingiverse-production.s3.amazonaws.com/renders/e1/86/a3/31/22/20140707_014824_preview_featured.jpg)
 * [Tardis](http://www.thingiverse.com/thing:455188)
   ![](http://thingiverse-production.s3.amazonaws.com/renders/a9/04/d2/ad/bb/tardis_preview_featured.jpg)
-  
-
