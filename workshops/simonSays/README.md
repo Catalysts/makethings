@@ -1,4 +1,4 @@
-![](../../images/arduino.png)
+![](../../images/arduino_board.png)
 
 # Play Simon with Arduino
 
