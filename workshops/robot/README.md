@@ -1,3 +1,5 @@
+![](../../images/arduino_car.png)
+
 # Build-a-Bot Tutorial
 
 * [Components](#user-content-components)

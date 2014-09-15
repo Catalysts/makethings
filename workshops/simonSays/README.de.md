@@ -1,3 +1,5 @@
+![](../../images/arduino.png)
+
 # Spiel' Simon Says mit Arduino
 
 In diesem Workshop werden wir das Spiel [Simon Says](https://de.wikipedia.org/wiki/Simon_says_(Spiel)) mit Arduino nachbauen. Um das Zusammenbauen zu beschleunigen, wurde die Anzahl der Farben auf drei begrenzt, der Code erlaubt es aber sehr leicht neue Farben hinzuzufügen.

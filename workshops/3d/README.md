@@ -1,4 +1,4 @@
-![](../../images/3D-Modeling-Printing.png)
+![](../../images/3D_modeling_printing.png.png)
 
 # 3D Modelling'n'Printing
 

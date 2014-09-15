@@ -1,3 +1,5 @@
+![](../../images/arduino.png)
+
 # Play Simon with Arduino
 
 In this workshop we are going to build the [Simon](http://en.wikipedia.org/wiki/Simon_(game)) game with [Arduino](https://ardunio.cc). To make the assembly routine faster, I reduced the size of the available colors to three, but the code will permit very easily to add extra colors.
