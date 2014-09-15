@@ -1,6 +1,6 @@
 <div>
   <a href="http://makethings.io/vienna">
-    <img src="https://makethings.s3.amazonaws.com/event/img/logo.png" align="left" />
+    <img src="https://catalysts.github.io/makethings/logo.png" align="left" />
   </a>
   <h3 align="right"><a href="http://makethings.io/vienna">Make Things in Vienna</a></h3>
   <p align="right"><strong>20 September 2014</strong><br />
