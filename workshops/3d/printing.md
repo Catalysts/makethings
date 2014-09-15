@@ -49,10 +49,11 @@ Congratulations! You successfully configured Slic3r to work with MakeGear 3D pri
 
 ### Opening 3D model
 
-Once you open your model in Slicer you see an overview of your build platform.
-You'll want to make sure that your model fits in the confines of this build platform and it doesn't stretch out over any of the sides. You can easily add additional models to printing area and spread them automatically (Arrange button) or manually.
+Once you open your model in Slicer you will see an overview of your model on printing surface (which is called bed).
+You'll need to make sure that your model fits into dimensions of bed and doesn't stretch out over any of the sides.
+You can easily add additional models to printing area and spread them automatically (using Arrange button) or manually.
 
-![Slic3r User Interface](images/slic3r.png) 
+![Slic3r User Interface](images/slic3r.png)
 
 You can also scale, rotate and even split your model if it contains more than one separate piece and arrange them separately.
 
@@ -60,12 +61,12 @@ You can also scale, rotate and even split your model if it contains more than on
 > takes proportional time to print and in case of error with printing one of
 > pieces you need probably to cancel all printing job.
 
-You can press View button to 3D representation of separate piece.
+You can press View button to see 3D representation of separate piece.
 
-![View 3D model](images/view.png) 
+![View 3D model](images/view.png)
 
 
-To redefine default settings press Settings button. You may need it to change:
+To redefine default settings press Settings button. You may need to change e.g.:
 * Fill pattern and density. By default it use honeycomp and 40% and it is pretty good, but in some cases you will probably need 100% density and rectlinear pattern.
 * Support material. In some cases model can have very special shape which can be difficult to print. In these cases you'll have to generate support - it is obvious that printer cannot start his job in the air. Think about it and it is probably better to rotate model to print it easier.
 
@@ -76,15 +77,15 @@ There are few things to keep in mind when creating a 3D model for 3D printing.
 One, the model must be a solid object. There can be no holes in the outer skin
 of the object. It's also referred to as a water tight object.
 
-The other thing to keep in mind with 3D printing is to make sure you don't
-have over hangs for your model. 
+The other thing to keep in mind with 3D printing is to make sure your model doesn't
+have overhangs.
 > Imagine a mushroom. It cannot be able to print on a normal printer. It will
 > result in a stringy mess that will hang down below the mantel of the
 > mushroom. To be able to print it when generating the g code you can use the
 > exterior support option. This is generate an extra layer of support that
 > will be printed around the model. The support can be later torn away leaving
 > behind some scar marks but still leaving behind a nice models. another
-> solution for create models with over hangs is to think about them in 
+> solution for create models with over hangs is to think about them in
 > a different manner. The mushroom won't be able to print facing right side
 > up. But it will print just fine *upside down*.
 
@@ -96,7 +97,7 @@ have over hangs for your model.
 > called G programming language.
 > G-code is a language in which people tell computerized machine tools what to
 > make and how to make it. The "how" is defined by instructions on where to
-> move to, how fast to move, and through what path to move. 
+> move to, how fast to move, and through what path to move.
 
 From Slic3r you can generate your G code. Make sure you're using a proper
 slicing profile and that your skinning preferences are set correctly.
@@ -137,4 +138,3 @@ Additional resources
 * [OctoPrint](http://octoprint.org/)
 * [Preparing a Model for 3D Printing](http://3d.about.com/od/Creating-3D-The-CG-Pipeline/ss/Preparing-A-Model-For-3d-Printing-Model-To-3d-Print-In-5-Steps.htm)
 * [M2 Getting Started](http://makergear.wikidot.com/m2-getting-started)
-
