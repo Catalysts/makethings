@@ -118,7 +118,7 @@ Your design should not be bigger than x=60mm, y=60mm, z=30mm - printing takes so
 ## Additional sources
 You want to tinker more in 3D modelling or Tinkercad did not satisfy you? 
 
-Here is a list of free 3D modelling software we created for you:
+Here is a list that we compiled for you, pointing to free 3D modelling software:
 
 - Autodesk 123D - design: <http://apps.123dapp.com/design/>
 - Sketchup - <http://www.sketchup.com/> (plugin needed for stl exports)
