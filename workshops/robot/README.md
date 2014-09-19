@@ -43,7 +43,7 @@ This tutorial will guide you through the process of creating autonomous wheeled 
 
 You will start with some basic Arduino example.
 
-First of all you need to install Arduino IDE. The [Getting Started Guide](http://arduino.cc/en/Guide/HomePage) from the official Arduino website will tell you everything about it. Once you have installed Arduino IDE you can start writing your own programs for Arduino (often called called sketches). We'll use a language based on C to program our Arduino.
+First of all you need to install Arduino IDE. The [Getting Started Guide](http://arduino.cc/en/Guide/HomePage) from the official Arduino website will tell you everything about it. Once you have installed Arduino IDE you can start writing your own programs for Arduino (often called sketches). We'll use a language based on C to program our Arduino.
 
 Let's start.
 
@@ -54,14 +54,14 @@ Let's start.
 1. Open example sketch via *File &rarr; Examples &rarr; 01.Basics &rarr; Blink* (or see [Appendix 1](#appendix-1-led-blinking-example)).
 
 1. Compile this example (*Sketch &rarr; Verify/Compile*).
-   After compiling you'll see "Done compiling" and the size of the binary in bytes.
+   You'll see "Done compiling" and the size of the binary in bytes when the compilation is completed.
 
 1. Connect your Arduino board to your laptop using a USB cable.
    After that you will see some connected device in *Tools &rarr; Serial Port*. Select it.
    Now you are able to upload your sketch to the Arduino board.
 
 1. To start uploading simply press the Upload button on the toolbar or choose *File &rarr; Upload*.
-   Arduino will start blinking it's TX/RX LEDs and after a few seconds your sketch will have finished uploading indicated by "Done uploading" and the LEDs not flashing anymore.
+   Arduino will start blinking its TX/RX LEDs and after a few seconds your sketch will have finished uploading indicated by "Done uploading" and the LEDs not flashing anymore.
 
 Congratulations! You have just uploaded your first program to the microcontroller.
 
@@ -71,7 +71,7 @@ There is a wide range of different sensors that can be used with Arduino.
 
 ![IR sensor](images/ir_sensor_preview.png)
 
-You will use a Sharp infrared distance sensor (GP2Y0A21YK0F) to measure distances of objects to your robot. It's range is restricted from 10cm to 80cm.
+You will use a Sharp infrared distance sensor (GP2Y0A21YK0F) to measure distances of objects to your robot. Its range is restricted from 10cm to 80cm.
 
 ![Analog Output Voltage vs Distance to Reflective Object](images/ir_sensor_diagram.png)
 
@@ -79,14 +79,14 @@ It's easy to connect this sensor to Arduino. Take a look at the following pictur
 
 ![](images/ir.png)
 
-Connected wires as shown:
+Connect wires as shown:
 * + (red wire) to +5V pin
 * ground (black wire) to one of the GND pins
 * signal (yellow wire) to pin A0
 
 You will use the sketch from [Appendix 2](#appendix-2) to calibrate your IR distance sensor.
 
-The sketch converts the voltage values read from the first analog pin (A0) to distances in centimeters. To achieve that, it uses a prefilled table (twodimensional array) that maps the measured value to it's corresponding length in centimeters. It's important to note that Arduino uses a 10-bit analog to digital converter. This means that the value read from the analog pins (0V to 5V) will be translated into integer values between 0 and 2¹⁰ - 1 = 1023.
+The sketch converts the voltage values read from the first analog pin (A0) to distances in centimeters. To achieve that, it uses a prefilled table (2-dimensional array) that maps the measured value to its corresponding length in centimeters. It's important to note that Arduino uses a 10-bit analog to digital converter. This means that the value read from the analog pins (0V to 5V) will be translated into integer values between 0 and 2<sup>10</sup> - 1 = 1023.
 If you open *Tools &rarr; Serial Monitor* after compiling and uploading the sketch, you will see the current analog value and the corresponding distance to the object in front of the sensor.
 
 You can check the measurement by placing an object aligned to a ruler and matching the output from the Serial Monitor. If it's not enough precise, you should tune the values in the table until you reach the level of precision you need.
@@ -97,7 +97,7 @@ Congratulations! You just learned how to read the output of an IR distance senso
 
 There are a wide range mechanisms that can help our robot to move. The most commonly used are DC motors, stepper motors and servos. You will use continuous rotation servos for that.
 
-![Servo](images/servo.png )
+![Servo](images/servo.png)
 
 Servo motors typically have three wires: power (red), ground (black or brown) and signal (yellow, orange or white). Connect them as follows:
  * power to the +5V pin on the Arduino board
@@ -108,31 +108,31 @@ If you want to learn how the work, you may be interested in [this article](http:
 
 ![](images/one_servo.png)
 
-At first you will calibrate the servos. Calibration can be performed in software and hardware. In the first case you'll have to adjust with the potentiometer. In the latter case you want to adjust pulse width by changeing the parameters passed to the `writeMilliseconds` function. Later you will control two servos, so we suggest that you calibarte the potentiometer to match the software, in order to have the same base value for both motors.
+At first you will calibrate the servos. Calibration can be performed in software and hardware. In the first case you'll have to do adjustments with the potentiometer. In the latter case you want to adjust pulse by changing the parameters passed to the `writeMilliseconds` function. Later you will control two servos, so we suggest that you calibrate the potentiometer to match the software, in order to have the same base value for both motors.
 
-The sketch from [Appendix 3](#appendix-3-control-servo) will help us to calibrate our servos. Change it to run the servo on zero speed and[c] adjust the potentiometer position to ensure that at zero speed there's really no rotation.
+The sketch from [Appendix 3](#appendix-3-control-servo) will help us calibrating our servos. Change it to run the servo on zero speed and[c] adjust the potentiometer position to ensure that at zero speed there's really no rotation.
 
 Then you will connect two servos at once to control them simultaneously. Take a look at the following picture.
 
 ![](images/two_servos.png)
 
-You need to slightly change the sketch to control both servos simultaneously. Take a look at it in [Appendix 4](#appendix-4-two-servos).
+You need to slightly change the sketch to control both servos simultaneously. Check out [Appendix 4](#appendix-4-two-servos) for the complete code.
 
 ## Power it with Batteries
 
-Until now you used power from USB. In order to let your robot drive you will need some portable source of energy: Four AA batteries will be used for each robot.
+Until now you used power from USB. In order to let your robot drive around freely you will need some portable source of energy: Four AA batteries will be used for each robot.
 
 ![](images/battery_holder.png)
 
-Plug the positive, red cable into VIN, and the negative, black cable into one of the GND pins of your Arduino board. The Arduino board has a built-in voltage regulator and may work with 5V to 20V on VIN (though 7V through 12V are recommended).
+Plug the positive (red) cable into VIN, and the negative (black) cable into one of the GND pins of your Arduino board. The Arduino board has a built-in voltage regulator and may work with 5V to 20V on VIN (though 7V through 12V are recommended).
 
-Connect everything as shown on the picture below:
+Connect everything as shown in the picture below:
 
 ![](images/bot.png)
 
-Make sure you connect everything properly and then turn the switch on the battery case to ON.
+Make sure you connect everything properly and then turn the battery switch to ON.
 
-Note that servos consume considerable power, so if you need to drive more than one or two, you'll probably need to power them from a separate supply (not the +5V pin on your Arduino). Be sure to connect the grounds of the Arduino and the external power supply.
+Note that servos consume a considerable amount of power, so if you need to drive more than one or two, you'll probably need to power them from a separate supply (not the +5V pin on your Arduino). Be sure to connect the grounds of the Arduino and the external power supply.
 
 # Build the Robot's Body
 
@@ -144,9 +144,9 @@ Several parts have been prepared to build your Robot's "body":
 
 ![](images/bot_box.png)
 
-At first fix the servos to side panels with screws (12mm M2). Pay attention that the servo shaft should align closer to the backside of the robot body. Then fix the IR sensor on the front panel also with screws (6mm M3). Then pull all the wires through holes in front and back panels so that all of them come out on the back. Then take mini breadboard and stick it with 2-sided adhesive tape on back panel.
+At first fixate the servos to the side panels with screws (12mm M2). Pay attention that the servo shaft should align closer to the backside of the robot body. Then fix the IR sensor on the front panel also with screws (6mm M3). Then pull all the wires through holes in front and back panels so that all of them come out on the back. Then take mini breadboard and stick it with 2-sided adhesive tape on back panel.
 
-Then fix Arduino board on top panel with three screws (12mm M2). You can put small piece of material between panel and board to avoid contact of board with surface (or just to fit it better). Or you can use small plastic spacers.
+Use three screws (12mm M2) to mount the Arduino board on top of the body. You can put small piece of material between panel and board to avoid contact between their surfaces (or just to fit it better). Small plastic spacers are also an option.
 
 Fix together wheel and round fasteners with screws. Then put rubber ring on the wheel. Put wheel on the servo shaft and fix with screw.
 
@@ -154,47 +154,47 @@ Congratulations! It is almost done!
 
 ## Program robot
 
-In first implementation you will try to achieve following:
+In the first implementation you will try to achieve following:
  * avoid obstacles
  * avoid table edges
 
 You are restricted to use only one sensor.
 
-On the first picture you can see that in normal state when robot moves along surface the distance to nearest obstacle is equal the distance to surface.
+In the first picture you can see that in normal state when the robot moves along the surface, the distance to the nearest obstacle is equal to the distance of the surface itself.
 
-If our robot will reach some object lying on surface the distance is much less than default distance to surface (Lmax).
+If our robot will reach some object lying on the surface, the distance is much less than the default distance to the surface (Lmax).
 
-So the easiest way to reach our first goal is to keep robot moving within this distance range.
+So the easiest way to reach our first goal is to keep our robot moving within this distance range.
 
-Similarly you can reach second goal - avoid table edges. If distance is more than Lmax is is more likely that robot is directing to the table edge.
+Similarly you can reach the second goal - avoid table edges. If the distance is more than Lmax it is more likely that the robot is directing to the table edge.
 
-Lets define two basic rules.
+Let's define two basic rules:
 * when distance to obstacle (D) within range Lmin and Lmax robot will move straight forward
-* when D is greater than Lmax or less than Lmin robot will rotate until it find direction with D lying within safe range
+* when D is greater than Lmax or less than Lmin robot will rotate until it finds direction with D lying within safe range
 
-Robot has 2 wheels. It will drive under the most basic algorithm for a robot - differential drive:
-* to drive straight both wheels move forward at same speed
-* to drive reverse both wheels move back at same speed
+The robot has 2 wheels. It will drive under the most basic algorithm for a robot - differential drive:
+* to drive straight both wheels move forward at equal speed
+* to drive reverse both wheels move back at equal speed
 * to turn left the left wheel moves in reverse and the right wheel moves forward
 * to turn right the right wheel moves in reverse and the left wheel moves forward
 
-In your case servos are placed in opposite directions so that for one of them robot forward moving means clockwise rotation, for another one - counter-clockwise. Try keep it in mind.
+In your case servos are placed in opposite directions so that for one of them robot forward moving means clockwise rotation, for another one - counter-clockwise. Try to keep this in mind.
 
-Take a look on example sketch in [Appendix 5. Basic bot](#appendix-5-basic-bot).
+Take a look at the example sketch in [Appendix 5. Basic bot](#appendix-5-basic-bot).
 
 Let’s start implementing custom behaviour.
 
 ## Stay on distance
 
-Task is change robot behavior so that it hold same distance to obstacle when obstacle is moving back and forth.
+The task is to change the robot's behaviour so that it holds same distance to an obstacle when the obstacle is moving back and forth.
 
 ## Shuttle run
 
-Your task is to make robot moving forth and back. Main goal is that robot has to move exact distance and return back on start position.
+Your task is to make the robot moving forth and back. Focus on moving exactly the same distance and return back to the start position.
 
 ![](images/shuttle_run.png)
 
-The idea is to implement precise control - moving straight fro N centimeters and rotate exact 180 degrees.
+The idea is to implement precise control - moving straight for N centimeters and to rotate exact 180 degrees.
 
 # Move along straight way
 
@@ -204,7 +204,7 @@ Now imagine our robot overcomes a bridge. If you implemented calibration well en
 
 # Snake moving
 
-Imagine you are in tunnel. To find an exit robot will move repeating bends of route. You canl implement kind of PID (proportional-integral-derivative) controller.
+Imagine you are in a tunnel. To find an exit the robot will move repeating bends of route. You can implement kind of a PID (proportional-integral-derivative) controller.
 
 ![](images/snake_moving.png)
 
@@ -213,17 +213,17 @@ Imagine you are in tunnel. To find an exit robot will move repeating bends of ro
 
 ## Robotic sumo
 
-Robotic sumo is a kind of competition when robots are trying to put opponent away from a circle. There are different categories (depending on size of robots) and types of rules.
+Robotic sumo is a competition in which robots are trying to push the opponent out of a circle. There are different categories (depending on robot sizes) and types of rules.
 
 # Line following
 
-Line following is another kind of competitions. Robots are trying to follow the line on the surface with minimum time. Usually it is made with special set of IR sensors directed vertically, which can determine the color or surface just under the sensor. We can implement similar algorithm by using only one distance sensor.
+Robots are trying to follow the line on the surface within minimum time. Usually this is accomplished with a special set of IR sensors directed vertically, which can determine the color or surface just under the sensor. We can implement a similar algorithm by using only one distance sensor.
 
 # FAQ
 
-## How does IR distance sensor work?
+## How does the IR distance sensor work?
 
-These rangers all use triangulation and a small linear CCD array to compute the distance and/or presence of objects in the field of view. In order to triangulare, a pulse of IR light is emitted by the emitter. The light travels out into the field of view and either hits an object or just keeps on going. In the case of no object, the light is never reflected, and the reading shows no object. If the light reflects off an object, it returns to the detector and creates a triangle between the point of reflection, the emitter and the detector.
+These rangers all use triangulation and a small linear CCD array to compute the distance and/or presence of objects in the field of view. In order to triangulare, a pulse of IR light is emitted. The light travels out into the field of view and either hits an object or just keeps on going. In the case of no object, the light is never reflected, and the reading shows no object. If the light is reflected by an object, it returns to the detector and creates a triangle between the point of reflection, the emitter and the detector.
 ![](images/sharp_sensor.png)
 
 The incident angle of the reflected light varies based on the distance to the object. The receiver portion of the IR rangers is a precision lens that transmits reflected light onto various portions of the enclosed linear CCD array based on the incident angle of the reflected light. The CCD array can then determine the incident angle, and thus calculate the distance to the object. This method of ranging is very immune to interference from ambient light and offers indifference to the color of the object being detected.
@@ -495,5 +495,5 @@ void loop() {
 }
 ```
 
-[c]The sketch isnt really for calibration. It has additional logic to iterate over speeds/directions. Maybe we should comment those lines, and let the users firstly calibrate, then test the speed/direction iteration.
+[c]The sketch isn't really for calibration. It has additional logic to iterate over speeds/directions. Maybe we should comment those lines, and let the users first calibrate, then test the speed/direction iteration.
 [d]Maybe a picture here that helps get the wiring right in the final assembled bot?
