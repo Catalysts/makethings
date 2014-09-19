@@ -80,7 +80,7 @@ Ok, so we have a cylinder with the dimensions set in the previous step. Now lets
 
 7. Change the diameter of the thin vertical to 20mm. Realign the objects.
 
-8. Click on the thin cylinder and set it to Hole in the inspector. 
+8. Click on the inner vertical cylinder and set it to Hole in the inspector 
 
 9. Group all objects together and congrats you have your first 3D model ready!
 
@@ -93,7 +93,7 @@ Ok, so we have a cylinder with the dimensions set in the previous step. Now lets
 Use the predefined dice model from the right menu bar & the numbers also found there. Feel free to experiment.
 
 ## Additional tasks
-Do you feel good with your skills? If so let’s get to the next step if not keep on experimenting or ask us for some help.
+Do you feel good with your skills? If so let’s get to the next step. Iff not keep on experimenting or ask us for some help.
 
 ### Utilize your 3D modelling skills to make something useful
 We dare you to design and model a bottle opener and since the material we will be printing with is not so strong, we will be using a coin in the design, so it will be more sturdy and open the bottle instead of breaking ;)
