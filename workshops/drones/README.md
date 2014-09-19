@@ -25,8 +25,12 @@ Optional (LEDs):
 ### Pinout of the arduino pro micro
 ![](images/promicro_pins.png)
 
+&copy; [SparkFun](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide)
+
 ### Pinout of the A7105
 ![](images/A7105_pins.png)
+
+&copy; AVANTCOM
 
 ### Image of the wired station
 ![](images/wiring.png)
