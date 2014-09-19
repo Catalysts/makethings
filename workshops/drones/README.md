@@ -1,6 +1,6 @@
 # Drones
 
-In this workshop you will learn how to build a transmitter station to control your drone.
+In this workshop you will learn how to build a transmitter station to control your drone. You 'll assemble the station, connect the transmitter chip (A7105) to the arduino and upload the software which 'talks' to your drone. Then you can open a ground station on your PC and control the drone with your keyboard, with your code or create own applications for it (like a mobile app, ...).
 
 # Requirements
 
@@ -56,7 +56,7 @@ If you don't have the Arduino IDE already installed, download the setup and inst
 
 Before you can upload software to the arduino pro micro, you have to install a driver and an arduino extension: [Pro Micro & Fio v3 Hookup Guide](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide#installing-windows).
 
-**Basic steps are (for more details and screenshots use the link):**
+**Basic steps (for more details and screenshots use the link above):**
 
 1. Download the [drivers for arduino pro micro](https://github.com/sparkfun/SF32u4_boards/raw/master/driver/ProMicro.inf) (note: save file as `.inf`, not `.txt`!)
 2. Plug in the arduino board. Windows will search for drivers and it will fail (but don't worry, see next step)
