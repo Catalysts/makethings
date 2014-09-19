@@ -93,7 +93,7 @@ Ok, so we have a cylinder with the dimensions set in the previous step. Now lets
 Use the predefined dice model from the right menu bar & the numbers also found there. Feel free to experiment.
 
 ## Additional tasks
-Do you feel good with your skills? If so let’s get to the next step. Iff not keep on experimenting or ask us for some help.
+Do you feel good with your skills? If so let’s get to the next step. If not keep on experimenting or ask us for some help.
 
 ### Utilize your 3D modelling skills to make something useful
 We dare you to design and model a bottle opener and since the material we will be printing with is not so strong, we will be using a coin in the design, so it will be more sturdy and open the bottle instead of breaking ;)
