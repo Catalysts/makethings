@@ -162,7 +162,11 @@ You are restricted to use only one sensor.
 
 In the first picture you can see that in normal state when the robot moves along the surface, the distance to the nearest obstacle is equal to the distance of the surface itself.
 
+![](./images/dist_surface.png)
+
 If our robot will reach some object lying on the surface, the distance is much less than the default distance to the surface (Lmax).
+
+![](./images/dist_obstacle.png)
 
 So the easiest way to reach our first goal is to keep our robot moving within this distance range.
 
