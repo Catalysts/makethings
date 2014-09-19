@@ -498,6 +498,3 @@ void loop() {
   delay(500); // half-second delay
 }
 ```
-
-[c]The sketch isn't really for calibration. It has additional logic to iterate over speeds/directions. Maybe we should comment those lines, and let the users first calibrate, then test the speed/direction iteration.
-[d]Maybe a picture here that helps get the wiring right in the final assembled bot?
