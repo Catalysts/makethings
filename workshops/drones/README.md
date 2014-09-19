@@ -94,7 +94,7 @@ Before you can upload software to the arduino pro micro, you have to install a d
 
 ### Start the ground station
 
-1. Execute `node start-repl.js` inside the directory with the sourcecode.
+1. Execute `node start-server.js` inside the directory with the sourcecode.
 
 
 # Advance flow
