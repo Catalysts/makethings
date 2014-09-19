@@ -22,19 +22,26 @@ Optional (LEDs):
 
 ## Build the transmitter station
 
-![](fritzing/wiring.png)
+### Pinout of the arduino pro micro
+![](images/promicro_pins.png)
+
+### Pinout of the A7105
+![](images/A7105_pins.png)
+
+### Image of the wired station
+![](images/wiring.png)
 
 **Instructions**
 
 1. Attach the A7105 to the middle of the breadboard (see image).
-2. Wire the 3.3v of the arduino board to the live rail on the breadboard.
-3. Wire the ground pin of the arduino to the ground rail on the breadboard.
+2. Wire the 3.3v of the arduino board to the live rail (red) on the breadboard.
+3. Wire the ground pin of the arduino to the ground rail (blue) on the breadboard.
 4. Connect the VDD pin of the A7105 to the live rail of the breadboard.
 5. Connect the two GND pins of the A7105 chip to the ground rail of the breadboard.
-6. Wire the MOSI pin of the Arduino board to one end of the 10kΩ resistor
+6. Wire pin 16 of the Arduino board to one end of the 10kΩ resistor
 7. Wire the other end of the resistor to the SDIO pin of the A7105
-8. Wire gio1 of the A7105 to the MISO port of the Arduino board
-9. Wire 'SCK' of the arduino to 'SCK' on the A7105
+8. Wire gio1 of the A7105 to pin 14 of the Arduino board
+9. Wire pin 15 of the arduino to 'SCK' on the A7105
 10. Wire pin 10 of the arduino to 'SCS' on the A7105
 
 **Optional: Add a push button for resetting the arduino:**
