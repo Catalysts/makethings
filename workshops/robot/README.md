@@ -14,8 +14,8 @@
   * [Move along straight way](#user-content-move-along-straight-line)
   * [Snake moving](#user-content-snake-moving)
 * [Advanced flow](#user-content-advanced-flow)
-  * [Robotic sumo](#user-content-robotic-sumo)
   * [Line following](#user-content-line-following)
+  * [Robotic sumo](#user-content-robotic-sumo)
 * [FAQ](#user-content-faq)
 * [Links](#user-content-links)
 * [Appendix 1. LED blinking example](#user-content-appendix-1-led-blinking-example)
@@ -23,7 +23,7 @@
 * [Appendix 3. Control servo](#user-content-appendix-3-control-servo)
 * [Appendix 4. Two servos](#user-content-appendix-4-two-servos)
 * [Appendix 5. Basic bot](#user-content-appendix-5-basic-bot)
-
+* [Appendix 6. Line following](#user-content-appendix-6-line-following)
 
 This tutorial will guide you through the process of creating autonomous wheeled robots.
 
@@ -215,13 +215,31 @@ Imagine you are in a tunnel. To find an exit the robot will move repeating bends
 
 # Advanced flow
 
+# Line following
+
+We are going to make our robot moving along black line on white surface. To reach that goal we will use line detection modules.
+
+Typically line detection module consists from 2 parts - light emitter and linght sensor. First emits linght onto surface and the second checks if the light was reflected. Depending on surface reflection factor (or color) it will return the value.
+
+![](images/follow_line_sensor.jpg)
+
+Algorithm we are going to use is fairly simple - we want to keep black line to be between sensors. Algorithm steps:
+* if left sensor is abowe line - turn left
+* if right sensor is above line - turn right
+* if no or all sensors is above line - move forward
+
+These steps are displayed on following picture
+
+![](images/follow_line_alg.jpg)
+
+You can find a program in [Appendix 6](#user-content-appendix-6-line-following).
+
+Congrats!!! You just created line follower robot!
+
 ## Robotic sumo
 
 Robotic sumo is a competition in which robots are trying to push the opponent out of a circle. There are different categories (depending on robot sizes) and types of rules.
 
-# Line following
-
-Robots are trying to follow the line on the surface within minimum time. Usually this is accomplished with a special set of IR sensors directed vertically, which can determine the color or surface just under the sensor. We can implement a similar algorithm by using only one distance sensor.
 
 # FAQ
 
@@ -404,15 +422,12 @@ void loop() {
 ```c++
 #include <Servo.h>
 
-
 #define NEUTRAL 1500 // pulse width for servo at zero speed
 #define MAX_SPEED 300 // diff for pulse width between zero and max speed
 #define MAX_FORWARD NEUTRAL+MAX_SPEED // pulse width for max counter-clockwise speed
 #define MAX_BACKWARD NEUTRAL-MAX_SPEED // pulse width for max clockwise speed
 
-
 #define LED 13 // on-board Arduino LED
-
 
 // Move directions
 #define UNKNOWN -1
@@ -421,15 +436,12 @@ void loop() {
 #define RIGHT 2
 #define BACKWARD 3
 
-
 // IR sensor values
 #define TOO_FAR 300 // to far to obstacle - probably table edge
 #define TOO_CLOSE 500 // too close to obstacle
 
-
 Servo rightServo;
 Servo leftServo;
-
 
 void attachServos() {
   if (!rightServo.attached()) { rightServo.attach(9); }
@@ -498,3 +510,105 @@ void loop() {
   delay(500); // half-second delay
 }
 ```
+
+# Appendix 6. Line following
+
+```c++
+/**
+* Basic line-following algorithm
+*/
+#include <Servo.h>
+
+//#define DEBUG // uncomment line to get debug info
+
+// servo is controlled with PWM signal with pulse width from 1000 to 2000 microseconds
+#define NEUTRAL 1500 // pulse width for servo at zero speed
+#define MAX_SPEED 50 // diff for pulse width (from 0 to 500 (max speed))
+#define MAX_FORWARD NEUTRAL+MAX_SPEED // pulse width for max counter-clockwise speed
+#define MAX_BACKWARD NEUTRAL-MAX_SPEED // pulse width for max clockwise speed
+
+#define LED 13 // on-board Arduino LED
+
+// Move directions
+#define UNKNOWN -1
+#define FORWARD 0
+#define LEFT 1
+#define RIGHT 2
+#define BACKWARD 3
+
+Servo rightServo;
+Servo leftServo;
+
+void attachServos() {
+  if (!rightServo.attached()) { rightServo.attach(9); }
+  if (!leftServo.attached()) { leftServo.attach(10); }
+}
+
+void move(int dir) {
+  switch (dir) {
+    case FORWARD:
+      rightServo.writeMicroseconds(MAX_BACKWARD);
+      leftServo.writeMicroseconds(MAX_FORWARD);
+      break;
+    case LEFT:
+      rightServo.writeMicroseconds(MAX_BACKWARD);
+      leftServo.writeMicroseconds(MAX_BACKWARD);
+      break;
+    case RIGHT:
+      rightServo.writeMicroseconds(MAX_FORWARD);
+      leftServo.writeMicroseconds(MAX_FORWARD);
+      break;
+    case BACKWARD:
+      rightServo.writeMicroseconds(MAX_FORWARD);
+      leftServo.writeMicroseconds(MAX_BACKWARD);
+      break;
+    default:
+      rightServo.writeMicroseconds(NEUTRAL);
+      leftServo.writeMicroseconds(NEUTRAL);
+  }
+}
+
+#define LINE_LEFT 5
+#define LINE_CENTER 6
+#define LINE_RIGHT 7
+
+int checkLine(int pos) {
+  return digitalRead(pos);
+}
+
+void setup() { 
+  pinMode(A0, INPUT);
+  pinMode(LED, OUTPUT);
+  attachServos();
+#ifdef debug
+  Serial.begin(9600);
+#endif
+} 
+
+int currentDirection = UNKNOWN;
+
+void loop() { 
+  // read sensors
+  int l = checkLine(LINE_LEFT);
+  int c = checkLine(LINE_CENTER);
+  int r = checkLine(LINE_RIGHT);
+#ifdef DEBUG
+  Serial.print(r);
+  Serial.print(c);
+  Serial.println(l);
+#endif
+  // main algorithm
+  if (l == LOW && r == HIGH) {
+    currentDirection = LEFT;
+  } else if (l == HIGH && r == LOW) {
+    currentDirection = RIGHT;
+  } else {
+    currentDirection = FORWARD; 
+  }
+  // indicate getting back on path
+  digitalWrite(LED, currentDirection != FORWARD);
+  move(currentDirection);
+  delay(50); // 50 ms delay
+}
+```
+
