@@ -369,7 +369,7 @@ int step = 10;         // change pulse width on "step" microseconds at a time
 
 
 void setup() {
-  servo.attach(9); // attach servo to pin 9
+  servo.attach(10); // attach servo to pin 10
   Serial.begin(9600);
   servo.writeMicroseconds(current); // set default speed - servo should stay not moving
   delay(5000);  // for 5 seconds
@@ -528,7 +528,7 @@ void loop() {
 
 //#define DEBUG // uncomment line to get debug info
 
-// servo is controlled with PWM signal 
+// servo is controlled with PWM signal
 // with pulse width from 1000 to 2000 microseconds
 #define NEUTRAL 1500 // pulse width for servo at zero speed
 #define MAX_SPEED 50 // diff for pulse width (from 0 to 500 (max speed))
@@ -584,18 +584,18 @@ int checkLine(int pos) {
   return digitalRead(pos);
 }
 
-void setup() { 
+void setup() {
   pinMode(A0, INPUT);
   pinMode(LED, OUTPUT);
   attachServos();
 #ifdef debug
   Serial.begin(9600);
 #endif
-} 
+}
 
 int currentDirection = UNKNOWN;
 
-void loop() { 
+void loop() {
   // read sensors
   int l = checkLine(LINE_LEFT);
   int c = checkLine(LINE_CENTER);
@@ -611,7 +611,7 @@ void loop() {
   } else if (l == HIGH && r == LOW) {
     currentDirection = RIGHT;
   } else {
-    currentDirection = FORWARD; 
+    currentDirection = FORWARD;
   }
   // indicate getting back on path
   digitalWrite(LED, currentDirection != FORWARD);
@@ -619,4 +619,3 @@ void loop() {
   delay(50); // 50 ms delay
 }
 ```
-
