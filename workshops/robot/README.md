@@ -257,6 +257,12 @@ In comparison with DC motor servos can be controlled more easily.
 ## What is role of PWM in controlling servos?
 Take a look on following picture. You may see a signal of rectangular form which has 2 characteristics: pulse width and period.
 
+## How to fix servos (screws are too small)?
+You can use a hack. Just make a "tool" which consists from a stick (handle) and a piece of adhesive tape on one end. The stick a nut on top of that piece of adhesive tape and put it in place.
+
+## Robot does not work/move or reboots continously. What's wrong?
+Try to check voltage level on the battery. It shouldn't be lower than 6 volts, otherwise Arduino may work unstable.
+
 ![](images/pwm_cycles.png)
 
 Typically servos are controlled by PWM signal with fixed period. By controlling pulse width we can control servo.
