@@ -25,7 +25,7 @@
 * [Appendix 5. Basic bot](#user-content-appendix-5-basic-bot)
 * [Appendix 6. Line following](#user-content-appendix-6-line-following)
 
-This tutorial will guide you through the process of creating autonomous wheeled robots.
+This tutorial will guide you through the process of creating autonomous wheeled robot.
 
 # Components
 
@@ -37,6 +37,7 @@ This tutorial will guide you through the process of creating autonomous wheeled 
 6. Battery holder x1
 7. AA battery x4
 8. Bunch of color wires
+9. Line sensor x 2 (optional)
 
 # Basic Flow
 ## LED Blinking
@@ -521,7 +522,8 @@ void loop() {
 
 //#define DEBUG // uncomment line to get debug info
 
-// servo is controlled with PWM signal with pulse width from 1000 to 2000 microseconds
+// servo is controlled with PWM signal 
+// with pulse width from 1000 to 2000 microseconds
 #define NEUTRAL 1500 // pulse width for servo at zero speed
 #define MAX_SPEED 50 // diff for pulse width (from 0 to 500 (max speed))
 #define MAX_FORWARD NEUTRAL+MAX_SPEED // pulse width for max counter-clockwise speed
