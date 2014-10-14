@@ -8,7 +8,7 @@
   * [Connect IR sensor](#user-content-connect-ir-sensor)
   * [Connect servo](#user-content-connect-servo)
   * [Power it with batteries](#user-content-power-it-with-batteries)
-  * [Build robot body](#user-content-build-robot-body)
+  * [Build robot body](#user-content-build-the-robots-body)
   * [Program robot](#user-content-program-robot)
   * [Shuttle run](#user-content-shuttle-run)
   * [Move along straight way](#user-content-move-along-straight-line)
