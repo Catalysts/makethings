@@ -3,7 +3,7 @@
 */
 #include <Servo.h>
 
-//#define DEBUG // uncomment line to get debug info
+// #define DEBUG 1 // uncomment line to get debug info
 
 // servo is controlled with PWM signal with pulse width from 1000 to 2000 microseconds
 #define NEUTRAL 1500 // pulse width for servo at zero speed
@@ -64,7 +64,7 @@ void setup() {
   pinMode(A0, INPUT);
   pinMode(LED, OUTPUT);
   attachServos();
-#ifdef debug
+#ifdef DEBUG
   Serial.begin(9600);
 #endif
 } 
@@ -77,9 +77,9 @@ void loop() {
   int c = checkLine(LINE_CENTER);
   int r = checkLine(LINE_RIGHT);
 #ifdef DEBUG
-  Serial.print(r);
+  Serial.print(l);
   Serial.print(c);
-  Serial.println(l);
+  Serial.println(r);
 #endif
   // main algorithm
   if (l == LOW && r == HIGH) {
